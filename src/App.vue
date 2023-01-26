@@ -4,16 +4,16 @@
       <div class="violet-header_container">
          <div class="violet-top">
             <div class="violet-top_left">
-               <span class="ru">Ru</span>
-               <span class="header-btn">
+              <span class="ru">Ru</span>
+                <span class="header-btn">
                   <span class="material-symbols-outlined icon-geo">
                      home_pin
                   </span>
                   <span class="voron">Воронеж</span>
-               </span>
-               <span class="free">Бесплатная доставка</span>
-               <span class="sell">Продавайте на Wildberries</span>
-               <span class="work">Работа на Wildberries</span>
+                </span>
+              <span class="free">Бесплатная доставка</span>
+              <span class="sell">Продавайте на Wildberries</span>
+              <span class="work">Работа на Wildberries</span>
             </div>
             <div class="violet-top_right">
                <span>Сообщить о проблеме</span>
@@ -56,31 +56,8 @@
             <div class="seasonal promotions">
                <img class="promotions-big" src="https://images.wbstatic.net/bners1/big_presale_2810.jpg" >
             </div>
-            <div class="main-header-categories">
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/desk_kimberly_2610_TV47485.jpg">
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/desk_vitek_2210_UT.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/pdkf.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/39393040566.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/gejfk.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/desk_transformeri_2210_UT.jpg" >
-               </div>
-               <div class="main-header-categories__item">
-                  <img class="main-header-categories__item__img" src="https://images.wbstatic.net/bners1/desk_garnier_2210_UT.jpg" >
-               </div>
+            <div class="app category-list">
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
             </div>
             <div class="bestsellers">
                <p class="bestsellers_">Хиты продаж</p>
@@ -344,7 +321,20 @@
 </template>
 
 <script>
-
+import CategoryComponent from './components/Category.vue'
+export default {
+   name: 'App',
+   components: {
+      CategoryComponent
+   },
+   computed: {
+      category: function () {
+         return {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }
+      }
+   }
+}
 
 </script>
 
