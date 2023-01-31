@@ -329,9 +329,14 @@ export default {
    },
    computed: {
       category: function () {
-         return {
+         return [{
             img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
-         }
+         },
+      {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         },{
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }]
       }
    }
 }
