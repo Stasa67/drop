@@ -56,8 +56,15 @@
             <div class="seasonal promotions">
                <img class="promotions-big" src="https://images.wbstatic.net/bners1/big_presale_2810.jpg" >
             </div>
-            <div class="app category-list">
+            <div class="category">
                <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />            
             </div>
             <div class="bestsellers">
                <p class="bestsellers_">Хиты продаж</p>
@@ -329,9 +336,9 @@ export default {
    },
    computed: {
       category: function () {
-         return {
+         return [ {
             img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
-         }
+         } ]
       }
    }
 }
@@ -570,22 +577,12 @@ body {
 }
 }
 
-.main-header-categories__item {
-   cursor: pointer;
-   border-radius: 18px;
-   overflow: hidden;
-   height: 244px;
-   background-color: #000000;
-}
-
-.main-header-categories__item__img {
-   width: 100%;
-}
-
-.main-header-categories__item__img:hover {
-   transition: 2s;
-   transform: scale(1.2);
-   opacity: 0.7;
+.category {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   font-size: 14px;
+   padding: 54px 0;
+   gap: 24px;
 }
 
 .bestsellers {
