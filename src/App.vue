@@ -1,344 +1,227 @@
 <template>
-  <div>
-    <div class="violet-header">
-      <div class="violet-header_container">
-         <div class="violet-top">
-            <div class="violet-top_left">
-              <span class="ru">Ru</span>
-                <span class="header-btn">
-                  <span class="material-symbols-outlined icon-geo">
-                     home_pin
-                  </span>
-                  <span class="voron">Воронеж</span>
-                </span>
-              <span class="free">Бесплатная доставка</span>
-              <span class="sell">Продавайте на Wildberries</span>
-              <span class="work">Работа на Wildberries</span>
-            </div>
-            <div class="violet-top_right">
-               <span>Сообщить о проблеме</span>
-            </div>
-         </div>
-         <div class="violet-bottom">
-            <div class="violet-bottom__burger-container">
-               <span class="material-symbols-outlined icon-burger">
-                  density_medium
-               </span>
-            </div>
-            <div class="logotype">WILDBERRIES</div>
-             <input class="search-input" type="text" placeholder="Я ищу...">
-            <div class="violet-bottom__container">
-               <div class="container-addres">
-                  <span class="material-symbols-outlined icon-geo icon-geo--second">
-                     home_pin
-                  </span>
-                  <div class="violet-bottom__container__address">Адреса</div>
-               </div>
-               <div class="container-come">
-                  <span class="material-symbols-outlined">
-                     person
+   <div>
+      <div class="violet-header">
+         <div class="violet-header_container">
+            <div class="violet-top">
+               <div class="violet-top_left">
+                  <span class="ru">Ru</span>
+                  <span class="header-btn">
+                     <span class="material-symbols-outlined icon-geo">
+                        home_pin
                      </span>
-                  <div class="violet-bottom__container__come">Войти</div>
+                     <span class="voron">Воронеж</span>
+                  </span>
+                  <span class="free">Бесплатная доставка</span>
+                  <span class="sell">Продавайте на Wildberries</span>
+                  <span class="work">Работа на Wildberries</span>
                </div>
-               <div class="container-basket">
-                  <span class="material-symbols-outlined">
-                     shopping_cart
+               <div class="violet-top_right">
+                  <span>Сообщить о проблеме</span>
+               </div>
+            </div>
+            <div class="violet-bottom">
+               <div class="violet-bottom__burger-container">
+                  <span class="material-symbols-outlined icon-burger">
+                     density_medium
+                  </span>
+               </div>
+               <div class="logotype">WILDBERRIES</div>
+               <input class="search-input" type="text" placeholder="Я ищу...">
+               <div class="violet-bottom__container">
+                  <div class="container-addres">
+                     <span class="material-symbols-outlined icon-geo icon-geo--second">
+                        home_pin
                      </span>
-                <div class="violet-bottom__container__basket">Корзина</div>
+                     <div class="violet-bottom__container__address">Адреса</div>
+                  </div>
+                  <div class="container-come">
+                     <span class="material-symbols-outlined">
+                        person
+                     </span>
+                     <div class="violet-bottom__container__come">Войти</div>
+                  </div>
+                  <div class="container-basket">
+                     <span class="material-symbols-outlined">
+                        shopping_cart
+                     </span>
+                     <div class="violet-bottom__container__basket">Корзина</div>
+                  </div>
                </div>
             </div>
          </div>
       </div>
+      <div class="main-header">
+         <div class="main-header-container">
+            <div class="main-header-hight">
+               <div class="seasonal promotions">
+                  <img class="promotions-big" src="https://images.wbstatic.net/bners1/big_presale_2810.jpg">
+               </div>
+               <div class="category">
+                  <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
+               </div>
+               <div class="bestsellers">
+                  <p class="bestsellers_">Хиты продаж</p>
+               </div>
+               <div class="products_container">
+                  <ProductComponent v-for="(item, index) in product" :product="item" :key="index" />
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="footer">
+         <div class="footer-container">
+            <div class="footer-container_buyers">
+               <span class="caption-buyers">Покупателям</span>
+               <ul class="footer-list">
+                  <li class="footer-list__iten">Как сделать заказ</li>
+                  <li class="footer-list__iten">Способы оплаты</li>
+                  <li class="footer-list__iten">Доставка</li>
+                  <li class="footer-list__iten">Возврат товара</li>
+               </ul>
+            </div>
+            <div class="footer-container_partners">
+               <span class="caption-buyers">Партнерам</span>
+               <ul class="footer-list">
+                  <li class="footer-list__iten">Продавайте на Wildberries</li>
+                  <li class="footer-list__iten">Перевозчикам</li>
+                  <li class="footer-list__iten">Партнерский пункт выдачи</li>
+                  <li class="footer-list__iten">Франшизный пункт выдачи</li>
+               </ul>
+            </div>
+            <div class="footer-container_company">
+               <span class="caption-buyers">Компания</span>
+               <ul class="footer-list">
+                  <li class="footer-list__iten">О нас</li>
+                  <li class="footer-list__iten">Реквизиты</li>
+                  <li class="footer-list__iten">Контакты</li>
+                  <li class="footer-list__iten">Пресс-центр</li>
+               </ul>
+            </div>
+            <div class="footer-container_social-network">
+               <span class="caption-buyers">Мы в соцсетях</span>
+               <ul class="footer-list">
+                  <li class="footer-list__iten">Вконтакте</li>
+                  <li class="footer-list__iten">Телеграм</li>
+                  <li class="footer-list__iten">Одноклассники</li>
+                  <li class="footer-list__iten">YouTube</li>
+               </ul>
+            </div>
+         </div>
+      </footer>
    </div>
-   <div class="main-header">
-      <div class="main-header-container">
-         <div class="main-header-hight">
-            <div class="seasonal promotions">
-               <img class="promotions-big" src="https://images.wbstatic.net/bners1/big_presale_2810.jpg" >
-            </div>
-            <div class="category">
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
-               <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />            
-            </div>
-            <div class="bestsellers">
-               <p class="bestsellers_">Хиты продаж</p>
-            </div>
-            <div class="products_container">
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/04/1649930108_post_45910_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://www.novochag.ru/upload/img_cache/c8e/c8e5aab81ddfc1698ef5e66aa5534b9d_ce_400x600x0x0_cropped_400x600.jpg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://static.galamart.ru/images_1000/3ZJ9RAD.jpg?t=1576757721">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2020/04/1980.jpg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1665821410_post_51468_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1666688409_post_51696_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/08/1661432107_post_49622_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1666783509_post_51730_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1666614907_post_51684_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1666340406_post_51604_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>  
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/02/1644928808_post_45030_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://uberdeal.ru/wp-content/uploads/2022/10/1665732608_post_51441_thumbnail.jpeg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="products_cards">
-                  <div class="products_cards-picture">
-                     <img class="cards-picture" src="https://cs5.pikabu.ru/post_img/2014/10/09/11/1412878322_2014414081.jpg">
-                     <div class="cards-text-img">Быстрый просмотр</div>
-                  </div>
-                  <div class="products_cards-info">
-                     <div class="product-cards_price">
-                        <b class="product-cards_price-now">124 р</b>
-                        <s class="product-cards_price-last">546 р</s>
-                     </div>
-                     <div class="products_cards-description">
-                        <p>Товар очень хороший</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <footer class="footer">
-      <div class="footer-container">
-         <div class="footer-container_buyers">
-            <span class="caption-buyers">Покупателям</span>
-            <ul class="footer-list">
-               <li class="footer-list__iten">Как сделать заказ</li>
-               <li class="footer-list__iten">Способы оплаты</li>
-               <li class="footer-list__iten">Доставка</li>
-               <li class="footer-list__iten">Возврат товара</li>
-            </ul>
-         </div>
-         <div class="footer-container_partners">
-            <span class="caption-buyers">Партнерам</span>
-            <ul class="footer-list">
-               <li class="footer-list__iten">Продавайте на Wildberries</li>
-               <li class="footer-list__iten">Перевозчикам</li>
-               <li class="footer-list__iten">Партнерский пункт выдачи</li>
-               <li class="footer-list__iten">Франшизный пункт выдачи</li>
-            </ul>
-         </div>
-         <div class="footer-container_company">
-            <span class="caption-buyers">Компания</span>
-            <ul class="footer-list">
-               <li class="footer-list__iten">О нас</li>
-               <li class="footer-list__iten">Реквизиты</li>
-               <li class="footer-list__iten">Контакты</li>
-               <li class="footer-list__iten">Пресс-центр</li>
-            </ul>
-         </div>
-         <div class="footer-container_social-network">
-            <span class="caption-buyers">Мы в соцсетях</span>
-            <ul class="footer-list">
-               <li class="footer-list__iten">Вконтакте</li>
-               <li class="footer-list__iten">Телеграм</li>
-               <li class="footer-list__iten">Одноклассники</li>
-               <li class="footer-list__iten">YouTube</li>
-            </ul>
-         </div>
-      </div>
-   </footer>
-  </div>
 </template>
 
 <script>
 import CategoryComponent from './components/Category.vue'
+import ProductComponent from './components/Product.vue'
 export default {
    name: 'App',
    components: {
-      CategoryComponent
+      CategoryComponent,
+      ProductComponent
    },
    computed: {
       category: function () {
-         return [ {
+         return [{
             img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
-         } ]
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         }, {
+            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+         },]
+      },
+
+      product: function () {
+         return [
+            {
+               img: "https://www.novochag.ru/upload/img_cache/c8e/c8e5aab81ddfc1698ef5e66aa5534b9d_ce_400x600x0x0_cropped_400x600.jpg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Товар очень хороший"
+            },
+            {
+               img: "https://static.galamart.ru/images_1000/3ZJ9RAD.jpg?t=1576757721",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Купи коня"
+            },
+            {
+               img: "https://uberdeal.ru/wp-content/uploads/2020/04/1980.jpg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Богатырский конь"
+            },
+            {
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665821410_post_51468_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Бери, не пожалеееешь"
+            },
+            {
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Щас такого не поют"
+            },
+            {
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666688409_post_51696_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Ловите ритм"
+            },
+            {
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Иии раз, раз, раз-два-три"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/08/1661432107_post_49622_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Там диги дам"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666783509_post_51730_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Тиги дам там там"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666614907_post_51684_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Аааааа и аааааа"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666340406_post_51604_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Аааааа и аааааа"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/02/1644928808_post_45030_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Аааааа и аааааа"
+            },{
+               img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665732608_post_51441_thumbnail.jpeg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Аааааа и аааааа"
+            },{
+               img: "https://cs5.pikabu.ru/post_img/2014/10/09/11/1412878322_2014414081.jpg",
+               price: '2304p',
+               oldPrice: "666666666p",
+               text: "Аааааа и аааааа"
+            },
+         ]
+
       }
    }
 }
@@ -572,9 +455,9 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-.main-header-categories {
-   grid-template-columns: repeat(2, 1fr);
-}
+   .main-header-categories {
+      grid-template-columns: repeat(2, 1fr);
+   }
 }
 
 .category {
@@ -680,5 +563,4 @@ body {
 
 .footer-list__iten:hover {
    color: #FFFFFF
-}
-</style>
+}</style>

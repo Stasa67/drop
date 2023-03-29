@@ -1,6 +1,6 @@
 <template>
     <div class="categories__item">
-       <img :src="img">
+       <img :src="img" class="categories__item__img">
     </div>
        
 </template>
@@ -29,8 +29,11 @@ export default {
 .categories__item:hover {
     width: 336px;
     height: 244px;
-    transition: 2s;
-    transform: scale(1.2);
     opacity: 0.7;
     } 
+
+    .categories__item__img:hover {
+    transform: scale(1.2);
+    transition: 2s;
+    }
 </style>
