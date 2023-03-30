@@ -2,7 +2,7 @@
     <div class="products_cards">
         <div class="products_cards-picture">
             <img class="products_cards-picture-img" :src="product.img">
-            <div class="cards-text-img">Быстрый просмотр</div>
+            <div class="cards-text-img">{{ product.title }}</div>
         </div>
         <div class="products_cards-info">
             <div class="product-cards_price">

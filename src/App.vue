@@ -71,6 +71,7 @@
       <footer class="footer">
          <div class="footer-container">
             <div class="footer-container_buyers">
+               <FooterListComponent v-for="(item, index) in footer" :title="item.title" :key="index"/>
                <span class="caption-buyers">Покупателям</span>
                <ul class="footer-list">
                   <li class="footer-list__iten">Как сделать заказ</li>
@@ -80,13 +81,7 @@
                </ul>
             </div>
             <div class="footer-container_partners">
-               <span class="caption-buyers">Партнерам</span>
-               <ul class="footer-list">
-                  <li class="footer-list__iten">Продавайте на Wildberries</li>
-                  <li class="footer-list__iten">Перевозчикам</li>
-                  <li class="footer-list__iten">Партнерский пункт выдачи</li>
-                  <li class="footer-list__iten">Франшизный пункт выдачи</li>
-               </ul>
+               <FooterListComponent v-for="(item, index) in footer" :title="item.title" :key="index"/>
             </div>
             <div class="footer-container_company">
                <span class="caption-buyers">Компания</span>
@@ -114,11 +109,13 @@
 <script>
 import CategoryComponent from './components/Category.vue'
 import ProductComponent from './components/Product.vue'
+import FooterListComponent from './components/FooterList.vue'
 export default {
    name: 'App',
    components: {
       CategoryComponent,
-      ProductComponent
+      ProductComponent,
+      FooterListComponent
    },
    computed: {
       category: function () {
@@ -147,81 +144,102 @@ export default {
                img: "https://www.novochag.ru/upload/img_cache/c8e/c8e5aab81ddfc1698ef5e66aa5534b9d_ce_400x600x0x0_cropped_400x600.jpg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Товар очень хороший"
+               text: "Товар очень хороший",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://static.galamart.ru/images_1000/3ZJ9RAD.jpg?t=1576757721",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Купи коня"
+               text: "Купи коня",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2020/04/1980.jpg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Богатырский конь"
+               text: "Богатырский конь",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665821410_post_51468_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Бери, не пожалеееешь"
+               text: "Бери, не пожалеееешь",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Щас такого не поют"
+               text: "Щас такого не поют",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666688409_post_51696_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Ловите ритм"
+               text: "Ловите ритм",
+               title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Иии раз, раз, раз-два-три"
+               text: "Иии раз, раз, раз-два-три",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/08/1661432107_post_49622_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Там диги дам"
+               text: "Там диги дам",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666783509_post_51730_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Тиги дам там там"
+               text: "Тиги дам там там",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666614907_post_51684_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Аааааа и аааааа"
+               text: "Аааааа и аааааа",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666340406_post_51604_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Аааааа и аааааа"
+               text: "Аааааа и аааааа",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/02/1644928808_post_45030_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Аааааа и аааааа"
+               text: "Аааааа и аааааа",
+               title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665732608_post_51441_thumbnail.jpeg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Аааааа и аааааа"
+               text: "Аааааа и аааааа",
+               title: "Быстрый просмотр"
             },{
                img: "https://cs5.pikabu.ru/post_img/2014/10/09/11/1412878322_2014414081.jpg",
                price: '2304p',
                oldPrice: "666666666p",
-               text: "Аааааа и аааааа"
+               text: "Аааааа и аааааа",
+               title: "Быстрый просмотр"
             },
          ]
 
+      },
+      footer: function () {
+         return [
+         {
+            title: "Партнерам"
+         }
+         ]
       }
    }
 }
