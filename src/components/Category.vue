@@ -14,8 +14,7 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
 
 .categories__item {
     cursor: pointer;
@@ -24,16 +23,18 @@ export default {
     width: 336px;
     height: 244px;
     background-color: #000000;
+
+    &:hover {
+        width: 336px;
+        height: 244px;
+        opacity: 0.7;
+    }
+
+    &__img:hover{
+        transform: scale(1.2);
+        transition: 2s;
+    }
+
 }
 
-.categories__item:hover {
-    width: 336px;
-    height: 244px;
-    opacity: 0.7;
-    } 
-
-    .categories__item__img:hover {
-    transform: scale(1.2);
-    transition: 2s;
-    }
 </style>

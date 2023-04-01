@@ -54,7 +54,7 @@
          <div class="main-header-container">
             <div class="main-header-hight">
                <div class="seasonal promotions">
-                  <img class="promotions-big" src="https://images.wbstatic.net/bners1/big_presale_2810.jpg">
+                  <img class="promotions-big" src="https://photos.wbstatic.net/poster/ru/main/t720x422q/mob_ekat_11_3_23.webp">
                </div>
                <div class="category">
                   <CategoryComponent v-for="(item, index) in category" :img="item.img" :key="index" />
@@ -70,39 +70,12 @@
       </div>
       <footer class="footer">
          <div class="footer-container">
-            <div class="footer-container_buyers">
-               <FooterListComponent v-for="(item, index) in footer" :title="item.title" :key="index"/>
-               <span class="caption-buyers">Покупателям</span>
-               <ul class="footer-list">
-                  <li class="footer-list__iten">Как сделать заказ</li>
-                  <li class="footer-list__iten">Способы оплаты</li>
-                  <li class="footer-list__iten">Доставка</li>
-                  <li class="footer-list__iten">Возврат товара</li>
-               </ul>
-            </div>
-            <div class="footer-container_partners">
-               <FooterListComponent v-for="(item, index) in footer" :title="item.title" :key="index"/>
-            </div>
-            <div class="footer-container_company">
-               <span class="caption-buyers">Компания</span>
-               <ul class="footer-list">
-                  <li class="footer-list__iten">О нас</li>
-                  <li class="footer-list__iten">Реквизиты</li>
-                  <li class="footer-list__iten">Контакты</li>
-                  <li class="footer-list__iten">Пресс-центр</li>
-               </ul>
-            </div>
-            <div class="footer-container_social-network">
-               <span class="caption-buyers">Мы в соцсетях</span>
-               <ul class="footer-list">
-                  <li class="footer-list__iten">Вконтакте</li>
-                  <li class="footer-list__iten">Телеграм</li>
-                  <li class="footer-list__iten">Одноклассники</li>
-                  <li class="footer-list__iten">YouTube</li>
-               </ul>
-            </div>
+            <FooterListComponent title="Партнерам" :items="items1"/>
+            <FooterListComponent title="Покупателям" :items="items2"/>
+            <FooterListComponent title="Компания" :items="items3"/>
+            <FooterListComponent title="Мы в соцсетях" :items="items4"/>
          </div>
-      </footer>
+      </footer>            
    </div>
 </template>
 
@@ -122,112 +95,180 @@ export default {
          return [{
             img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/desk_polaris_3003_TV48495.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/8384995566.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/8339945966.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/desk_oppo_2603_UT.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/desk_png_2603_UT.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/383849566.webp"
          }, {
-            img: "https://images.wbstatic.net/bners1/desk_oshade_2210_UT.jpg"
+            img: "https://photos.wbstatic.net/bners1/desk_vasilisa_3003_TV49405.webp"
          },]
       },
 
+      items1: function () {
+         return [
+            {
+               message: 'Продавайте на Wildberries'
+            },
+            {
+               message: 'Курьерам'
+            },
+            {
+               message: 'Партнерский пункт выдачи'
+            },
+            {
+               message: 'Перевозчикам'
+            }
+
+         ]
+      },
+
+      items2: function () {
+         return [
+            {
+               message: 'Как сделать заказ'
+            },
+            {
+               message: 'Способы оплаты'
+            },
+            {
+               message: 'Доставка'
+            },
+            {
+               message: 'Возврат товара'
+            }
+
+         ]
+      },
+
+      items3: function () {
+         return [
+            {
+               message: 'О нас'
+            },
+            {
+               message: 'Реквизиты'
+            },
+            {
+               message: 'Контакты'
+            },
+            {
+               message: 'Пресс-центр'
+            }
+
+         ]
+      },
+
+      items4: function () {
+         return [
+            {
+               message: 'Вконтакте'
+            },
+            {
+               message: 'Телеграм'
+            },
+            {
+               message: 'Одноклассники'
+            },
+            {
+               message: 'YouTube'
+            }
+
+         ]
+      },
       product: function () {
          return [
             {
                img: "https://www.novochag.ru/upload/img_cache/c8e/c8e5aab81ddfc1698ef5e66aa5534b9d_ce_400x600x0x0_cropped_400x600.jpg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Товар очень хороший",
                title: "Быстрый просмотр"
             },
             {
                img: "https://static.galamart.ru/images_1000/3ZJ9RAD.jpg?t=1576757721",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Купи коня",
                title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2020/04/1980.jpg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
                text: "Богатырский конь",
                title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665821410_post_51468_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
                text: "Бери, не пожалеееешь",
                title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
                text: "Щас такого не поют",
                title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666688409_post_51696_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Ловите ритм",
                title: "Быстрый просмотр"
             },
             {
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666960508_post_51803_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Иии раз, раз, раз-два-три",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/08/1661432107_post_49622_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Там диги дам",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666783509_post_51730_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Тиги дам там там",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666614907_post_51684_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Аааааа и аааааа",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1666340406_post_51604_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Аааааа и аааааа",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/02/1644928808_post_45030_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Аааааа и аааааа",
                title: "Быстрый просмотр"
             },{
                img: "https://uberdeal.ru/wp-content/uploads/2022/10/1665732608_post_51441_thumbnail.jpeg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Аааааа и аааааа",
                title: "Быстрый просмотр"
             },{
                img: "https://cs5.pikabu.ru/post_img/2014/10/09/11/1412878322_2014414081.jpg",
-               price: '2304p',
-               oldPrice: "666666666p",
+               price: 2304,
+               oldPrice: 6666666,
                text: "Аааааа и аааааа",
                title: "Быстрый просмотр"
             },

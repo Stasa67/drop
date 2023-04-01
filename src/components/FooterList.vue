@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="footer-list-wrapper">
         <span class="caption-buyers">{{ title }}</span>
         <ul class="footer-list">
             <li class="footer-list__item" v-for="item in items" :key="item.message">
@@ -13,24 +13,14 @@
 export default {
     name: 'FooterListComponent',
     props: {
-        title: String
-    },
-    computed: {
-        items() {
-            return [ 
-            { message: 'Продавайте на Wildberries' },
-            { message: 'Франшизный пункт выдачи' },
-            { message: 'Перевозчикам' },
-            { message: 'Партнерский пункт выдачи' } 
-            ]
-        }
-        
+        title: String,
+        items: Array
     }
 }
 
 </script>
 
-<style>
+<style lang="less">
 .caption-buyers {
    font-size: 18px;
    color: #FFFFFF;
@@ -39,14 +29,19 @@ export default {
 .footer-list {
    padding: 0;
    list-style: none;
-}
 
-.footer-list__item {
-   cursor: pointer; 
-}
+    &__item {
+        cursor: pointer; 
+        padding-top: 10px;
 
-.footer-list__item:hover {
-   color: #FFFFFF
+        &:hover {
+            color: #FFFFFF
+        }
+   }
+
+   &-wrapper {
+        width: 340px;
+   }
 }
  
 </style>
