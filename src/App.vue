@@ -70,10 +70,7 @@
       </div>
       <footer class="footer">
          <div class="footer-container">
-            <FooterListComponent title="Партнерам" :items="items1"/>
-            <FooterListComponent title="Покупателям" :items="items2"/>
-            <FooterListComponent title="Компания" :items="items3"/>
-            <FooterListComponent title="Мы в соцсетях" :items="items4"/>
+            <FooterListComponent v-for="(item, index) in footer" :items="item.items" :title="item.title"  :key="index"/>
          </div>
       </footer>            
    </div>
@@ -110,17 +107,38 @@ export default {
             img: "https://photos.wbstatic.net/bners1/desk_vasilisa_3003_TV49405.webp"
          },]
       },
+      
+      footer: function () {
+         return [{
+            title:"Партнерам",
+            items: this.items1
+         },{
+            title:"Покупателям",
+            items: this.items2
+         },
+         {
+            title:"Компания",
+            items: this.items3
+         },
+         {
+            title:"Мы в соцсетях",
+            items: this.items4
+         }
+      ]
+      },
 
       items1: function () {
          return [
             {
-               message: 'Продавайте на Wildberries'
+               message: 'Продавайте на Wildberries',
+               type: 'black'
             },
             {
                message: 'Курьерам'
             },
             {
-               message: 'Партнерский пункт выдачи'
+               message: 'Партнерский пункт выдачи',
+               type: 'black'
             },
             {
                message: 'Перевозчикам'
@@ -138,7 +156,8 @@ export default {
                message: 'Способы оплаты'
             },
             {
-               message: 'Доставка'
+               message: 'Доставка',
+               type: 'red'
             },
             {
                message: 'Возврат товара'
@@ -150,10 +169,12 @@ export default {
       items3: function () {
          return [
             {
-               message: 'О нас'
+               message: 'О нас',
+               type: 'red'
             },
             {
-               message: 'Реквизиты'
+               message: 'Реквизиты',
+               type: 'green'
             },
             {
                message: 'Контакты'
@@ -274,13 +295,6 @@ export default {
             },
          ]
 
-      },
-      footer: function () {
-         return [
-         {
-            title: "Партнерам"
-         }
-         ]
       }
    }
 }
